@@ -1,0 +1,14 @@
+{
+  "mailQueue": {
+    "outPath": "src",
+    "source": {
+      "urlRefresh": "http://gii.it-private.ru/e-r-d2/refresh",
+      "urlGenerate": "http://gii.it-private.ru/e-r-d2/generate-module",
+      "params": {
+        "ns": "PrivateIT\\modules\\mailQueue",
+        "name": "MailQueue",
+        "docId": "a383d31f-f227-4f68-aa72-313b2a6550a8"
+      }
+    }
+  }
+}

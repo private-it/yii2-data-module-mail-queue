@@ -1,0 +1,19 @@
+{
+  "name": "private-it/yii2-data-module-mail-queue",
+  "description": "",
+  "license": "proprietary",
+  "type": "yii2-extension",
+  "autoload": {
+    "psr-4": {
+      "PrivateIT\\modules\\mailQueue\\": "src"
+    }
+  },
+  "require": {
+    "yiisoft/yii2": "^2.0"
+  },
+  "require-dev": {
+    "yiisoft/yii2-swiftmailer": "*",
+    "yiisoft/yii2-codeception": "^2.0",
+    "codeception/codeception": "2.1.8"
+  }
+}
