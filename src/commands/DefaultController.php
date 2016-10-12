@@ -16,6 +16,22 @@ class DefaultController extends Controller
 {
     public function actionIndex()
     {
+        // clear duplicates
+        Item::deleteAll([
+            'AND',
+            [
+                'status' => Item::STATUS_ACTIVE,
+            ],
+            [
+                'NOT IN', 'id',
+                Item::find()
+                    ->groupBy('name')
+                    ->select('MIN(id)')
+                    ->andWhere([
+                        'status' => Item::STATUS_ACTIVE
+                    ])
+            ]
+        ]);
         $items = Item::find()->andWhere(['status' => Item::STATUS_ACTIVE])->each();
         foreach ($items as $item) {
             /** @var MailQueueModule $mailQueue */
