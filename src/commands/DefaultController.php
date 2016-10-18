@@ -32,7 +32,7 @@ class DefaultController extends Controller
                     ])
             ]
         ]);
-        $items = Item::find()->andWhere(['status' => Item::STATUS_ACTIVE])->each();
+        $items = Item::find()->andWhere(['status' => Item::STATUS_ACTIVE])->limit(1000)->all();
         foreach ($items as $item) {
             /** @var MailQueueModule $mailQueue */
             $mailQueue = \Yii::$app->getModule('mailQueue');
